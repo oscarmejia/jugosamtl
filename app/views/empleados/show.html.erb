@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="card-panel green">
+    <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @empleado.documento %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @empleado.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @empleado.apellido %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @empleado.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @empleado.telefono %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @empleado.direccion %>
+</p>
+
+<p>
+  <strong>Fechan:</strong>
+  <%= @empleado.fechaN %>
+</p>
+
+<p>
+  <strong>Estadocivil:</strong>
+  <%= @empleado.estadoCivil %>
+</p>
+
+<p>
+  <strong>Tienda:</strong>
+  <%= @empleado.tienda.nombre %>
+</p>
+
+<div class="col m2">
+  <%= link_to 'Editar', edit_empleado_path(@empleado),class: "waves-effect waves-light btn" %>
+<%= link_to 'Atras', empleados_path,class: "waves-effect waves-light btn" %>
+</div>
+  </div>
+</div>

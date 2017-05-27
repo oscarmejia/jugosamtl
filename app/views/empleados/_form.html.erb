@@ -1,0 +1,62 @@
+<%= simple_form_for(@empleado) do |form| %>
+  <% if empleado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(empleado.errors.count, "error") %> prohibited this empleado from being saved:</h2>
+
+      <ul>
+      <% empleado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.input :documento, id: :empleado_documento, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+ 
+    <%= form.input :nombre, id: :empleado_nombre, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.input :apellido, id: :empleado_apellido, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+
+    <%= form.input :email, id: :empleado_email, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.input :telefono, id: :empleado_telefono, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.input :direccion, id: :empleado_direccion, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+ 
+    <%= form.input :fechaN, id: :empleado_fechaN, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year] , wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+    <%= form.input :estadoCivil, id: :empleado_estadoCivil, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.association :tienda, id: :empleado_tienda_id, wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "crear empleado",class: "waves-effect waves-light btn" %>
+  </div>
+<% end %>
